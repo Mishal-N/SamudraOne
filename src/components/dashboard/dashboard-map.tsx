@@ -1,3 +1,5 @@
+'use client';
+
 import { APIProvider } from '@vis.gl/react-google-maps';
 import { Map } from './map';
 import { MapPlaceholder } from './map-placeholder';
