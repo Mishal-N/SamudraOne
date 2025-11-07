@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { useFormState } from 'react-dom';
+import { useEffect, useRef, useActionState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -34,7 +33,7 @@ const fileToDataURL = (file: File): Promise<string> => {
 };
 
 export function PredictionForm() {
-  const [state, formAction] = useFormState(predictFishingZonesAction, initialState);
+  const [state, formAction] = useActionState(predictFishingZonesAction, initialState);
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
