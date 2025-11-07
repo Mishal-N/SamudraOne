@@ -1,1 +1,6 @@
-// Flows will be imported for their side effects in this file.
+import { config } from 'dotenv';
+config();
+
+import '@/ai/flows/predict-fishing-zones.ts';
+import '@/ai/flows/identify-species-from-edna.ts';
+import '@/ai/flows/classify-marine-species.ts';
