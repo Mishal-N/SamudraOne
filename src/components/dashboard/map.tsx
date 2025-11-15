@@ -14,6 +14,8 @@ const fishingZones = [
   { lat: 20.2, lng: 85.8, key: 'zone4' },
   { lat: 13.0827, lng: 80.2707, key: 'chennai' },
   { lat: 8.0883, lng: 77.5385, key: 'kanyakumari' },
+  { lat: 11.9416, lng: 79.8083, key: 'puducherry' },
+  { lat: 9.2876, lng: 79.3129, key: 'rameshwaram' },
 ];
 
 export function Map() {
