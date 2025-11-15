@@ -37,7 +37,11 @@ export async function predictFishingZonesAction(
   formData: FormData
 ): Promise<FormState<PredictFishingZonesOutput>> {
   try {
-    const parsed = predictSchema.safeParse(Object.fromEntries(formData));
+    const parsed = predictSchema.safeParse({
+        sstData: formData.get('sstData'),
+        catchData: formData.get('catchData'),
+        additionalFactors: formData.get('additionalFactors') || undefined
+    });
     if (!parsed.success) {
       return { status: 'error', message: parsed.error.errors.map(e => e.message).join(', ') };
     }
@@ -59,7 +63,7 @@ export async function classifyMarineSpeciesAction(
   formData: FormData
 ): Promise<FormState<ClassifyMarineSpeciesOutput>> {
   try {
-    const parsed = classifySchema.safeParse(Object.fromEntries(formData));
+    const parsed = classifySchema.safeParse({imageDataUri: formData.get('imageDataUri')});
     if (!parsed.success) {
         return { status: 'error', message: parsed.error.errors.map(e => e.message).join(', ') };
     }
@@ -82,7 +86,10 @@ export async function identifySpeciesFromEDNAAction(
   formData: FormData
 ): Promise<FormState<EDNAOutput>> {
   try {
-    const parsed = identifySchema.safeParse(Object.fromEntries(formData));
+    const parsed = identifySchema.safeParse({
+        ednaDataUri: formData.get('ednaDataUri'),
+        description: formData.get('description') || undefined
+    });
     if (!parsed.success) {
         return { status: 'error', message: parsed.error.errors.map(e => e.message).join(', ') };
     }
