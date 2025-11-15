@@ -12,14 +12,16 @@ const fishingZones = [
   { lat: 12.9, lng: 74.8, key: 'zone2' },
   { lat: 8.5, lng: 76.9, key: 'zone3' },
   { lat: 20.2, lng: 85.8, key: 'zone4' },
+  { lat: 13.0827, lng: 80.2707, key: 'chennai' },
+  { lat: 8.0883, lng: 77.5385, key: 'kanyakumari' },
 ];
 
 export function Map() {
   return (
     <GoogleMap
       style={{ width: '100%', height: '100%' }}
-      defaultCenter={{ lat: 15, lng: 80 }}
-      defaultZoom={5}
+      defaultCenter={{ lat: 11, lng: 79 }}
+      defaultZoom={6}
       gestureHandling={'greedy'}
       disableDefaultUI={true}
       mapId="a3b0f5c22f1d2e1a"
